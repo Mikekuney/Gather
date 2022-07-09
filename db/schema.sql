@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS gather_db;
+
+CREATE DATABASE gather_db;

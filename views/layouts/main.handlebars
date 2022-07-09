@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gather</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="flex-column min-100-vh">
+  <!--JESSIE-->
+  <nav>
+        <!--Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/dashboard">dashboard</a> |
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
+      <!--JESSIE ends-->
+
+  <nav class="navbar">
+    <ul>
+      {{#if loggedIn}}
+        <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+        <li class="li-inline nav-item"><a href="/outdoors">Outdoors</a></li>
+        <li class="li-inline nav-item"><a href="/food">Foods</a></li>
+        <li class="li-inline nav-item"><a href="/music">Music</a></li>
+        <li class="li-inline nav-item"><a href="/random">Random</a></li>
+        <li class="li-inline nav-item"><button id="logout" class="btn-no-style">Logout</button></li>
+        {{else}}
+        <li class="li-inline nav-item"><a href="/login">Login</a></li>
+        <li class="li-inline nav-item"><a href="/signup">Sign Up</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+  <header class="hero">
+    <h1 class="app-title"><a href="/">Gather</a></h1>
+  </header>
+
+  <main class="col-auto">
+    {{{body}}}
+  </main>
+
+  <footer class="flex-row justify-center">
+    &copy; 2022, The Gather Folks
+  </footer>
+
+  {{#if loggedIn}}
+    <script src="public/js/logout.js"></script>
+  {{/if}}
+
+</body>
+
+</html>
+
+<script src="/js/logout.js"></script>
